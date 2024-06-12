@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Arthur Abreu</title>
+    <link rel="stylesheet" href="estilo2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Quiz</h1>
+        <h5>Quiz Criado por Arthur Abreu</h5>
+        <form id="infoForm">
+            
+            <div class="input-group">
+                <label for="course">Curso:</label>
+                <input type="text" id="course" name="course" required>
+            </div>
+            <div class="input-group">
+                <label for="student">Nome do Aluno:</label>
+                <input type="text" id="student" name="student" required>
+            </div>
+            <div class="input-group">
+                <label for="subject">Disciplina:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <button type="submit" class="quiz-link">Iniciar Quiz</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('infoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const course = document.getElementById('course').value;
+            const student = document.getElementById('student').value;
+            const subject = document.getElementById('subject').value;
+
+            // Armazena as informações no localStorage
+            localStorage.setItem('course', course);
+            localStorage.setItem('student', student);
+            localStorage.setItem('subject', subject);
+
+            // Redireciona para a página do quiz
+            window.location.href = 'quiz.html';
+        });
+    </script>
+</body>
+</html>
